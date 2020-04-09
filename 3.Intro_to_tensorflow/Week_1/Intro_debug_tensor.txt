@@ -1,0 +1,68 @@
+I hope that in the previous lab where we asked you to write some code to compute
+the area of a triangle, you didn't just run the cells, that you tried to write some TensorFlow code
+yourself from scratch. If you did that, and you're like most people, you quickly ran into compiler and runtime errors and you
+started to wonder, how would I debug a
+TensorFlow program? Debugging a TensorFlow
+program can be tricky because of
+the lazy evaluation paradigm. If you have errors in your graph, you won't know about it until that part of the graph
+gets executed. This is one of the reasons
+why we said TF eager can be helpful when developing
+TensorFlow programs. It's not a panacea however, you still need to know how to
+debug TensorFlow programs, even if you've
+developed the program interactively with TF eager. So let's look at how to debug lazy evaluation
+TensorFlow programs. Debugging a TensorFlow program is similar to debugging any program. You have to learn how to
+read the error messages and use those error
+messages and stack traces to isolate the method. For the purpose of
+isolating the method, the problematic method,
+is so that you can call the method
+all by itself. You don't want to run the entire
+TensorFlow program on the dataset and try to
+debug the monolithic thing. Instead you will want to
+send made up data into the method and then you have a repeatable error that
+you can try to fix. How would you fix
+the error though? Obviously, we cannot show you all the possible errors
+you might run into, but we'll cover some of
+the more common types of error messages and ways
+that you'd address them. The first step is to
+not let your eyes glaze over when you see
+a spew of error messages. Look carefully at
+the error message. In particular, you're looking for two pieces of information. One, the stack trace. This is the call stack of methods at the time
+the error was thrown. In this case for example, you'll see that the line s
+equals a plus b in the method, some method of data is a problem. Obviously, the call
+stack will include a bunch of TensorFlow
+library methods too. Your program is
+calling those methods, the trick is to hone
+in on your code. Once you do that, look for the second piece
+of information, look at the actual error message. In this case, the error message is that a value error
+was encountered. TensorFlow expects that
+the dimensions must be equal, but it turns out
+that they're not. What's going on? Well,
+when you add a plus c, that will only work
+if a is a 2D tensor, and c is a 2D tensor. Or if a is a 4D tensor, then c also has to be 4D tensor. In this case, it turns out
+that one of them, maybe a, may be c is a 2D tensor
+of the shape [4, 2] and the other one, may be c is a 1D tensor
+of the shape four. So that is a problem. So obviously, something
+your program is wrong. Maybe you want both
+of them to be [4, 2] or maybe you want
+both of them to four. But finding the call
+stack and reading the error message helps you
+understand the problem. By looking at the call stack, you have found the line of code and the name of the method. So now find the method
+and look at it. Here, the method is called sum_method and it takes
+in a tensor called data. This is a tensor that you have to fake in order to get
+things working correctly. Forget about the rest
+of your program. Ignore how data actually gets read into
+your current program, will invoke the method
+with thick data. To invoke the method
+with fake data, create a session, create
+a hard coded tensor array. In this case, I'm created a four by three tensor called
+fake_data. Do you see it? I'm taking the fake_data, and passing it into
+some underscore method. Notice that I've also heavily instrumented the code of
+some data with print statements. It's a little old-fashioned to debug with print statements, but that's the easiest way
+to diagnose shape errors. So here we have two things
+that we are adding, a and c, and this was a problem, so I make sure to print
+out the shape of a, and the shape of c.
+When I run the program, the first line prints out [4, 2] and the second line
+prints out four, just like the value error
+message was saying. Now, it gets to intent. Did you mean the slice out of [4, 2] matrix for c? Or did you mean to slice
+out a 1D vector for a? Whichever it is that
+you meant to do, do it.
