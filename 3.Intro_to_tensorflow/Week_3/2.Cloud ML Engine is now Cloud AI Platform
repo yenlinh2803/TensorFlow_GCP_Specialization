@@ -1,0 +1,3 @@
+Cloud ML Engine is now Cloud AI Platform. You can use AI Platform to train your machine learning models using the resources of Google Cloud Platform. In addition, you can host your trained models on AI Platform so that you can send them prediction requests and manage your models and jobs using the GCP services.
+
+For the rest of this course and specialization, any reference to Cloud ML Engine refers to functionality available with AI Platform.
