@@ -1,0 +1,14 @@
+In this lab, you will clone the GitHub repository
+for this course within your AI platform
+notebook instance and save it on your project. Then, you can work with a notebook to try
+out the ML APIs. As before, the labs often have you simply run through
+a worked out example. We're choosing to do
+it this way because unfortunately we can't help you personally debug your code. To make sure you understand
+what is being done though, try changing the code
+and see if you understand the impact
+of those changes. Alternatively, remove the code from a critical section
+of the notebook. The critical sections
+are often pointed out in the challenge
+sections of the labs, and see if you can write
+the code yourself. If you get stuck, look
+back at the solution.

@@ -1,0 +1,35 @@
+Let's get started with
+AI platform notebooks. From within the GCP console,
+let's click the navigation menu and scroll down to artificial intelligence. Under artificial intelligence, you'll see
+the AI platform label, and then notebooks. Click notebooks. From within the screen,
+we can create a new instance for a VM, which will allow us to enter
+the Notebook environment. Let's click new instance. And when you do so,
+you get a set of options. These are a set of options in terms
+of the kind of development framework you want to work in. You'll see machine learning frameworks
+such as Tensorflow and Pytorch. Let's go ahead and
+use Tensorflow version one without GPUs. You get a window which allows you
+to change the name of the instance, gives you some details on the
+configuration, and also an estimated cost. So let's click create. This takes about two to
+three minutes to create, so we won't have you wait through all that. Now that our virtual machine
+has been instantiated, we can begin working within
+our AI platform notebooks. Click the link that says OPEN_JUPYTERLAB. JupyterLab is an open-source
+version of Jupyter Notebooks, and it allows us to run our
+Jupyter Notebooks on the cloud. Let's create a new notebook by
+clicking the tab that says Python 3. Now we have a new notebook environment. Within our new notebook environment,
+we get get a number of cells. We can start with one cell and
+then add in basic operations. We can do math, 1 plus 1 and
+we get our output here. You see in one cell we have the code and
+then our output on the other line. We can instantiate variables,
+x equals 1 plus 3. And then if we type the name of the
+variable alone in a code cell and run it with shift enter, we can see the output of
+that, what is contained in that variable. We can also choose to add some description
+of what we're doing in this code. So, for instance, if I click this
+drop-down and select mark down, I now have a plaintext cell in
+which to give some descriptions. This is an example of a Python notebook. This is written in
+the Markdown markup language. So I could add some kinds of formatting. For instance, if I put a hash mark and
+then add heading, this is a large heading. So you can see how this is a really
+powerful way in which we can mix code and some plain text explanation of
+what we're doing in the code within a single document. In the labs, you're going to see ways
+of how we get to do this in action, how this can interoperate
+with Big Query and how we can use ML APIs within
+this notebook environment.

@@ -1,0 +1,29 @@
+Let's now talk about the development
+environment you will use in this specialization. We're going to be talking about Python notebooks in the Cloud. AI Platform Notebooks are the integrated development
+environment you'll be using to write your code
+in this course. AI Platform Notebooks
+run on virtual machines. Because of that, we'll talk about Compute Engine and Cloud Storage. Why? Two things follow from the fact that AI Platform
+Notebooks run on a VM. First, it means that you can
+actually control and change what sort of machine is running your notebook by for example, giving it more memory
+or adding a GPU without having to rewrite
+your notebook from scratch. Second, VMs are ephemeral. Consequently, anything
+that you want to persist you must
+store outside the VM. The best place to do that, especially for large binary
+files is in Cloud Storage. So after reviewing how
+Compute Engine works, we'll review the basics
+of Cloud Storage. The notebooks themselves
+will store to Cloud repository so that
+they're under revision control. Finally, you'll do
+a lab so you can get hands-on with
+AI Platform Notebooks. You'll see how to use
+AI Platform Notebooks together with BigQuery, which is a managed data
+analysis service on a cloud, that you'll use to execute
+ad hoc queries at scales and speeds that are possible with traditional
+database systems. Then, you'll look at how to
+invoke pre-trained ML models, and do this from within
+AI Platform Notebooks. We'll learn how to
+develop Machine Learning models and Python notebooks, with a notebook server
+is in the cloud and execute ad hoc queries using
+serverless technologies. Not every Machine Learning model needs to be built from scratch. Also in this module, my colleague Sarah
+will show you how to invoke pre-trained
+Machine Learning models.

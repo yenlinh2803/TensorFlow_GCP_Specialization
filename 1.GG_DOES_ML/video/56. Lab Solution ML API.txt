@@ -1,0 +1,104 @@
+So now we're going to invoke the pre-trained ML APIs from within
+AI Platform Notebooks. The first thing we need to do is ensure that the APIs are enabled. So we can do that by clicking
+the navigation menu, go into APIs and services
+and clicking library. I'll search the Vision API which we're using first. Click it. We see the API is enabled. We can do the same
+with the other APIs. In this case, we're using the Translate API, also enabled, the Speech API,
+Speech-to-Text API, and the Natural Language API. So those are all enabled. Now I need to get an API key
+so I'm going to go to APIs and services
+and click Credentials. Then I'm going to
+grab my API key. I'm going to click
+create credentials here and create a new API key. In this case, I'm going to go ahead and copy this API key. Then you want to close this,
+and I'm going to go ahead, and I'm going go back to
+AI Platform Notebooks. Now, I've already created
+a Notebook server here, so I'm just going to go
+ahead and open Jupiter lab. Next, what I'm going to
+do is I'm going to pull from GitHub a repository that we're going to
+use in this course. The way you do this
+within Jupiter lab is that you click the Git image, this Git picture here
+and if you do it, you do a mouse over
+itself and say git Clone. I'm going to type in the URL for this Lab and you should
+paste this from the Lab. This is GitHub/Google Cloud Platform/Training
+Data Analyst, and I'm going to click Clone. After a second what
+it should give you is that new repository is
+directory right here. So in this case I have
+training data analyst. I'm going to go into
+training data analyst, and then I'm going to navigate
+to where the slide is. So it's in CPB 100 lab4c, and then ML APIs. When I double-click that, I'm going to see
+this editable notebook that we can run right on the VM. The first thing we're
+going to do is run a change our API
+key and paste what we already pasted
+from GCP Console. And then I'm going to run. I can do this by pressing
+Shift and then Enter. I can also do this by pressing the Play button here and
+I'll run the cell as well. We're going to
+ensure that we have the Translate, Cloud Vision API, Natural Language API and Cloud Speech API enabled, which
+we've already done. Because we're calling
+the APIs from Python, we're going
+to install this. We're going to install
+the Python package. So the first thing
+we're going to do is we're going to use
+the Translate API. Have you used
+Google Translate before? This is the same thing
+but within API form. So what we're going
+to do is we're going to take a set
+of input sentences. It says, "Is it really this
+easy?" "Amazing technology." "Wow." Then translate
+from one language, from English into our target
+language, which is French. Then we're going to print out
+each of those translations. So when I run this, I
+have the first thing. Is it really this easy? I'm not going to
+read that because my French pronunciation, isn't very great, amazing technology translated in
+French, and then wow. Next, we're going to
+invoke the Vision API. The Vision API can work off
+an image from cloud storage. And it can extract the characters to the language
+in a sign or an image, using Optical
+Character Recognition. In this case, we have
+the sign that's in Chinese. I don't read Chinese, so I
+want to see what it says. So the first thing we
+can do is we can make an API call to the Vision API and get
+the text of this image. So when I run this,
+I'm going to get this large bunch of output. This is in JavaScript
+Object Notation in which I'll see each
+of these characters, where it's located and also what language it's detected here. In this case, it is detecting that
+the language is Chinese. We can extract that locale and description by running
+this code block, and when we do so we see that Zh, that is the language
+code for Chinese. Next, we can translate that by using
+the Translation Service, the source being in Chinese. So in this case, Zh is stored in
+this foreign text variable, and then the target
+language being English, and then our inputs, the inputs that we extracted
+using the Vision API. We run this, we get the source text and
+then the translation, which reads, "Please protect
+and protect health and create a beautiful
+water environment." Next, what we're going to
+do, is we're going to do sentiment analysis
+with the language API. So that's going to
+give us a sense of whether a particular quote or a particular piece of text
+is positive or negative. So in calling this API, we're taking each
+of these quotes, we're feeding them
+to the language API, and we're generating
+both polarity score and the magnitudes score. So when I run this, I get a polarity score,
+in this case, 1, for positive, and
+then a strength magnitude. So to succeed you must have
+tremendous perseverance, tremendous will.
+Very strong statement. Polarity here as negative 1
+and the magnitude of 0.5. It's not that I'm so
+smart, it's just I stay problems longer and etc. You can play with this
+on your own to see how the sentiment analysis scores for a particular
+block of text. Lastly, we're going to
+invoke the Speech API. The Speech API can work on streaming data or
+an audio content, and, or it can work on
+a file on Cloud storage. So here we're going to pass an audio file from Cloud storage, and we're going to
+take it and try to transliterate that from the audio into text that we can read. So when we run
+this, on this file, we get a transcript here
+and a confidence score, the transcript being how
+old is the Brooklyn Bridge, with a pretty high
+confidence score, and we can reduce that
+down just to these values. So that's how you invoke
+the various ML APIs. Go ahead and play around with it. If you want some
+more of a challenge, go down to the
+challenge exercises, in which there's
+some portraits from the Metropolitan Museum
+of Art in New York, and you can use
+the Vision API trying to find which of
+these images to depict happy people and which of
+them depict unhappy people, and you can dig around to see what part of the response could
+use some of those values.

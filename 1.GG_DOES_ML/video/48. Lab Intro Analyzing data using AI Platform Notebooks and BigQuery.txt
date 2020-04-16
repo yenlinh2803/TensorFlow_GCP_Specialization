@@ -1,0 +1,19 @@
+In this lab, you'll get to employ a pretty useful pattern. You'll use BigQuery to
+calculate useful aggregates, like percentile values and other descriptive statistics
+over 70 million rows. The result will go into a Pandas DataFrame of a dozen rows. You can then happily used that in memory DataFrame
+for visualization. This is the thing
+that would take you hours if you did
+it any other way. Yeah, you'll create
+the graph in seconds. It's important to get this interactive
+development workload down. Otherwise, you won't be able to work with large
+datasets easily. You might think that you can simply sample the dataset
+and work with it. However, that's bad practice
+in machine learning. One thing I like to say is that the key difference between statistics and machine learning is how we deal with outliers. In statistics, outliers
+tend to be removed. In machine learning,
+outliers tend to be learned. That's because datasets in machine learning are
+typically much larger. In this lab you'll
+learn how to launch AI Platform Notebooks from
+within the GCP Console. You'll then invoke
+a BigQuery query to calculate aggregates
+over large dataset. Finally, you'll
+create the graphs in the notebook. Let's get started.

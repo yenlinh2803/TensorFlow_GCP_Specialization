@@ -1,0 +1,17 @@
+Do you use IPython or Jupyter
+notebooks today? Increasingly, data scientists work in self-descriptive,
+shareable, and executable notebooks whenever they want to do data analysis,
+or machine learning. This is what the interface
+of Jupyter lab looks like. Notice how there
+are codes such as interleave with
+markup and output. This interleaving is what makes this style of
+computing so useful. Data analysis and
+machine learning are commonly carried out in
+notebooks like this. The code is in the blue section, you can execute the code by either clicking
+the Run button, or by pressing Shift plus Enter. The red section displays
+output from the command. Notice that the output here isn't just command line output, it's charts and tables as well. The yellow section
+contains markup, so you can explain
+why you're doing, what you're doing in plain text. You can export the notebook
+as a stand alone file. You can also commit
+your changes into a code repository in GCP. The lab will show you how to pull from and commit to
+code repositories.

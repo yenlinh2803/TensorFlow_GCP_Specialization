@@ -1,0 +1,77 @@
+So to recap the lab, what we're going to
+do is we're going to take data that's in BigQuery, aggregate it within BigQuery,
+and then take those aggregates and do analysis with those aggregates
+within AI platform notebooks. So like in the demo, let's go ahead and
+let's start a new notebook environment. Go down to AI Platforms and
+click Notebooks. I've already got
+a notebook server running. Remember, to recall of how to do that,
+we click New Instance. Let's go to TenserFlow,
+let's do without GPUs this time. And let's go ahead and
+create our new instance. Remember, this takes about
+two to three minutes to do. While we do that, though, let's start exploring our data
+set from within BigQuery. So let's go ahead,
+click the navigation menu again, go down to Big Data, and click BigQuery. So now, we have our BigQuery environment,
+so we have our query editor. And we're going to be
+using a public data set. In this case, we're going to be
+using a data set on arrival and departure times of
+various airline flights. So I'm going to go ahead and
+paste this query in. I have some Python syntax here. But this is just SQL syntax here. So let's explain this query. So we are selecting the departure delay,
+the number of flights at that departure delay, and
+then the deciles of the arrival delay. So say your flight leaves 10 minutes late. Does it arrive 10 minutes late? What is the range of values that it takes? And we're splitting it into the zeroth
+percentile, tenth percentile, all the way up to the 100 percentile. We're getting this from
+a public dataset of flights. We're grouping them by departure delay,
+and we're only looking at those flights, those departure delays that
+have more than 100 flights. And then, we're going to order
+that by the departure delay. So we have about 70 million
+rows in this data set, and I'm going to click Run in this. And within this, we have aggregated. And we should get a result within seconds,
+and we do. 6.2 seconds, a gigabyte of data processed. So if we look at these data in a summary,
+we see the departure delay, negative 37. We get 107 flights that
+left 37 minutes early. And these are the approximate deciles
+of when those flights arrived. So in the zero decile, negative 66. The tenth, negative 44. So that actually arrived 44 minutes early. In the 20th, 41 minutes early, and so
+on and so on, all the way to the 100th. And within the 100th decile, a flight that left 37 minutes early
+actually arrived 33 minutes late. That's a extreme outlier in a sense. So now that we have all these
+values that we've generated and aggregated in BigQuery,
+now we can actually do some analysis on those aggregates in our
+AI platform notebooks. So let's go back to our
+AI platform notebook. Let's go down, and click on Notebooks. And by then,
+our new instance should have instantiated. So I'm going to click open Jupyterlab, and I'm going to get my new
+Notebook environment. I want to create a new Notebook here. And in this case, I can change the name
+if I go ahead and I click Rename here. And let's call this airline-delays. Before I actually work and add a query,
+I need to import the Google Cloud platform Python library to work
+within BigQuery seamlessly. So I am importing the BigQuery library
+from the Google Cloud Python SDK. And then, I'm going to create this
+new BigQuery variable that gives me a BigQuery client, and pass as
+a parameter, my quick labs project ID. Then, I'm going to define my query. And it's the same query that I
+used in the BigQuery window. And I'm going to define it as a string. And then,
+to put it into a Panda's data frame, I'm going to write df equals bq dot query. And then, in parentheses,
+the query that is above. And then, dot to_dataframe. That's going to convert
+it to a Pandas dataframe. Now if I type df.head, that's going to give me the first five
+rows of what's in that data frame. And so, each of these rows is
+a delayed departure by minute. So negative 37, negative 36,
+negative 35, all the way down. Number of flights, and
+then those deciles within those flights. Next, what I'm going to do is I'm going
+to take a piece of code that's going to generate on one hand the departure delay. And then, within each column
+is going to be the decile zero to 100% of delay for
+arrival for that flight. So the way this looks is
+that I have departure delay, and then I have each decile in
+each column, all the way to 100. And just to give you a sense of
+the size of this data frame, I'm going to type df dot shape. And that's going to give
+us in the first value the number of rows in this data frame,
+508. And the number of columns, 12. So that would make sense being that's the
+departure delay in each of the deciles. The last thing that I'm going to
+do is I'm going to plot the departure delay by
+each of these deciles. So, on the x-axis, I'm going to have
+the departure delay, and on the y-axis, I'm going to have the number of flights
+that takes each of these decile values. So in this piece of code,
+I'm going to first remove the zeroth percentile of the 100th
+percentile, because those are extremes. And then,
+I'm going to plot the departure delay. And I'm only going to look at departure
+delays from between 30 minutes early and 15 minutes late. And so, when we plot this in the notebook, what we see is generally the same trend. As flights are delayed,
+they tend to be, if they're more late, they're going to arrive late. But you probably expected this sense. What I really want to highlight in this
+lab is this pattern of doing some kind of large scale data analysis over
+70 million rows in BigQuery, generating those aggregates using
+the serverless technology on BigQuery. And then, taking that aggregation,
+in this case we have 508 rows that have been generated
+from those aggregate statistics, and being able to do that analysis
+on this virtual machine. We're going to be using this pattern over
+and over again in this specialization, so make sure you get familiar with it.

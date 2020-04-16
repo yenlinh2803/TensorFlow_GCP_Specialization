@@ -1,0 +1,31 @@
+Have you used Google Docs? How is it different from documents
+edited in a desktop editor? Have you filed taxes online? How is the experience different from
+doing your taxes in a desktop program? There's lots of benefits, but
+one key aspect is collaboration. You don't have to email documents back and
+forth. Imagine you start doing
+scientific research. Collaborating on a single
+result would be painful. You'd write some code and create a graph, then you would do
+the snapshot, create an image file, put it in a doc, create a PDF, and
+then you'd send it to your collaborator. A few hours later, your colleague
+would say, it looks great, but could you add one more year's data? It looks kind of sparse. And you'd go through
+the process all over again. Why? Because the PDF you sent wasn't editable. Round trips take a long time. Enter Python notebooks. You write the code, create the graph,
+write some commentary, and send the notebook link to your colleague. This way when the colleague wants to add
+one more year of data, they would simply edit the cell, look at the new graph and
+say, see, it looks a lot better. And that's great. And now you have a better notebook for
+the next step. One problem with traditional notebooks, who runs the server
+that hosts these pages? Whose machine? If it's yours and your machine goes to
+sleep, then your colleague can't work. When your AI platform notebook
+is hosted in the cloud, you can fell together quite easily. And just as Google docs are available
+even when your computer isn't on, so too AI platform notebooks when
+you run them in the cloud. To share a notebook within the project, other users can simply connect to
+the VM and work using the URL. Another way to share notebooks is through
+a version control system, for example GIT. Cloud also frees you from being
+constrained by hardware limitations. Not only can you run AI platform notebooks
+on any compute engine machine you want, you can also change the machine
+specs after it's been provisioned. You can go to the web console,
+find the running VM, stop it and restart it with a new
+machine configuration. To work on AI platform notebooks, you simply connect to the VM that's
+running the notebook server. Notebooks themselves can
+be persistent in GIT so you can delete the VM if
+you don't need it anymore. When you run the notebook,
+the computation is carried out on the VM.
